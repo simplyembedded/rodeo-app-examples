@@ -34,7 +34,7 @@ int app_main(int argc, const char *argv[])
     while (1) {
         bool presence = false;
         if (sths34pf80_get_presence(&presence) == 0) {
-            printf("Object detected\n");
+            printf("Object detected: %s\n", presence ? "Y" : "N");
         }
         sleep(1);
     }
