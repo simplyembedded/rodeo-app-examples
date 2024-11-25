@@ -1,0 +1,44 @@
+{
+    "version": 8,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 15,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "default",
+            "hidden": true,
+            "generator": "Unix Makefiles",
+            "cacheVariables": {
+                "COMMON_CFLAGS": "-MMD -Og -fno-common -g3 -ggdb -Wall -c -ffunction-sections -fdata-sections -Wfatal-errors",
+                "ORG_NAME": "demo"
+            }
+        },
+        {
+            "name": "debug",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "inherits": [
+                "default"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "inherits": [
+                "default"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "vendor": {
+        "simplyembedded.ca/rodeo-iot": {
+          "autoFormat": true
+        }
+    }
+}
